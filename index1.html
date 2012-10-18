@@ -7,10 +7,69 @@
 <body>
 	
 	
+	<form>
+		<input type="text" required value="" />
+		<input type="submit" value="Submit" />
+	</form>
+	
+	
+	<div id="one"></div>
+	<input type="text" id="two" />
+	<input type="text" id="three" disabled />
+	
+	<input id="foo" />
+	<input id="bar" />
+	
+	<input id="foo2" pattern="[0-9]{4}" value="1234" />
+	<input id="bar2" pattern="[0-9]{4}" value="ABCD" />
+		
+	<input id="foo" type="number" min="2" value="3" />
+	<input id="bar" type="number" min="2" value="1" />
 	
 	
 	
 	<script>
+		
+		/*****************************************************************
+			「willValidateプロパティー」は、そもそもバリデーションを設定できるか？を判定するもの。
+			
+			console.log(document.getElementById('one').willValidate);//undefinded
+			console.log(document.getElementById('two').willValidate);//true
+			console.log(document.getElementById('three').willValidate);//false
+			
+		****************************************************************************/
+		
+		/*****************************************************************
+		
+			「validity」は、バリーデーションのより詳しい情報を教えてくれる。
+			console.log(document.getElementById('foo').validity);
+			
+			「customError」は独自のエラーをもっているか？を判定する。
+			console.log(document.getElementById('foo').validity.customError);
+			
+			メソッド「setCustomValidity」を使うと、独自のエラーをセットできる。
+			document.getElementById('bar').setCustomValidity("errorが起こってるよ。");
+			console.log(document.getElementById('bar').validity.customError);//true
+			
+		****************************************************************************/
+		
+		/*****************************************************************
+			
+			「patternMismatch」プロパティーは、パターンと一致してるか？を判定する。
+			一致してなかったら、false、一致していたら、trueを判定する。
+			console.log(document.getElementById('foo2').validity.patternMismatch);
+			console.log(document.getElementById('bar2').validity.patternMismatch);
+		
+		****************************************************************************/
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
