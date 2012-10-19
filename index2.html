@@ -6,14 +6,71 @@
 </head>
 <body>
 	
+	<input type="text" id="foo1" required value="test"/>
+	<input type="text" id="foo2" required />
 	
+	
+	<form id="form-1">
+		<input id="input-1" type="text" required />
+	</form>
+	<form id="form-2">
+		<input id="input-2" type="text" />
+	</form>
+	
+	
+	<form novalidate>
+		<input type="text" required />
+		<input type="submit" value="Submit" />
+	</form>
+	
+	<form>
+		<input type="text" required />
+		<input type="submit" value="Validate" />
+		<input type="submit" value="Do NOT Validate" formnovalidate />
+	</form>
 	
 	
 	
 	
 	<script>
 		
+		/************** validationMessageプロパティー********************************
 		
+			validationMessageプロパティーは、バリデーションのエラーメッセージを出すものである。
+			エラーだったら、メッセージが表示され、エラーなかったら、空のオブジェクトが返される。
+		
+			console.log(document.getElementById('foo1').validationMessage);// ""
+			console.log(document.getElementById('foo2').validationMessage);// "このフィールドを入力してください。"
+		
+		****************************************************************************/
+		
+		
+		/************** checkValidityメソッド ***************************************
+		
+			checkValidityメソッドは、requiredなどのバリデーションを設定してるか？を判定するもの
+			また、formタグもでき、formタグにはいっているinputタグに設定されているか？を判定する。
+			formタグの中のinputで一つでもバリデーションが設定されていたら、falseを返す。
+			設定されていたら、falseを、設定されてなかったら、trueを返す。
+			
+			console.log(document.getElementById('form-1').checkValidity());
+			console.log(document.getElementById('input-1').checkValidity());
+		
+			console.log(document.getElementById('form-2').checkValidity());
+			console.log(document.getElementById('input-2').checkValidity());
+		
+		****************************************************************************/
+		
+		
+		/************** novalidateオプションとformnovalidateオプション******************
+		
+			novalidateは、formタグのオプションで、すべてのバリデーションが無効になる。
+			
+			formnovalidateは、inputのオプションで、バリデーションを無効にする。
+			
+			例えば、inputだったら、submitタイプのものにくっつける。
+			<input type="submit" value="Do NOT Validate" formnovalidate />
+		
+		****************************************************************************/
 		
 		
 		
