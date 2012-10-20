@@ -15,6 +15,15 @@
 		<input type="submit" value="submit"/>
 	</form>
 	
+	
+	<!-- pattern属性による入力値のパターン制約 -->
+	<p>pattern属性のパターン制約。正規表現で指定可能。</p>
+	<form>
+		<input type="text" pattern="\d{3}-?\d{4}" placeholder="123-4567" />
+		<input type="submit" value="submit"/>
+	</form>
+	
+	
 	<!-- type=”email” メールアドレスかどうかのバリデーション-->
 	<p> type="email" </p>
 	<form>
@@ -30,6 +39,7 @@
 		<input type="submit" value="submit"/>
 	</form>
 	
+	
 	<!-- maxlength　文字列の数の制限 -->
 	<p> maxlength </p>
 	<form>
@@ -38,8 +48,12 @@
 	</form>
 	
 	
-	
-	
+	<!-- min,maxによる制約 -->
+	<p>min,maxによる制約</p>
+	<form>
+		<input type="date" min="2012-03-01" max="2012-04-31" />
+		<input type="submit" value="submit"/>
+	</form>
 	
 	
 	
